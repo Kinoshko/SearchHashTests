@@ -70,7 +70,7 @@ namespace SearchHashTests
         public async Task SearchHash_Unknown_BadRequest(string hash)
         {
             using var response = await client.GetAsync($"?request={hash}");
-            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.NoContent));
         }
     }
 }
